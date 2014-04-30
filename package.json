@@ -1,0 +1,19 @@
+{
+  "name": "stress",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "redis": "^0.10.1",
+    "hiredis": "^0.1.16",
+    "redism": "^0.3.10",
+    "recore": "^0.4.8",
+    "cuid": "^1.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
