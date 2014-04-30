@@ -1,53 +1,62 @@
 Insert 10000 members to zset
 ============================
 
-** timing
-    
-  DONE in 0.14sec
+DONE in 0.14sec
 
-  real    0m0.236s
-  user    0m0.179s
-  sys     0m0.057s
+    real    0m0.236s
+    user    0m0.179s
+    sys     0m0.057s
 
 Insert 100000000 members to zset
 ================================
 
-** timeing
-
-  real    18m13.204s
-  user    11m48.482s
-  sys     6m28.761s
+    real    18m13.204s
+    user    11m48.482s
+    sys     6m28.761s
 
 ** usage
 
-  used_memory:11207863896
-  used_memory_human:10.44G
+    used_memory:11207863896
+    used_memory_human:10.44G
 
-Perform sort on big zset (zrevrangebyscore)
+Perform sort on big zset 10000 times (zrevrangebyscore)
 ========================
-
-** timing for 10000 ops
 
   DONE in 0.33sec
 
-Perform sort on big zset (zrangebyscore)
+Perform sort on big zset 10000 times (zrangebyscore)
 ========================
-
-** timing for 10000 ops
 
   DONE in 0.19sec
 
-Perform sort on small zset (zrevrangebyscore)
+Perform sort on small zset 10000 times (zrevrangebyscore)
 ========================
-
-** timing for 10000 ops
 
   DONE in 0.33sec
 
-Perform sort on small zset (zrangebyscore)
+Perform sort on small zset 10000 times (zrangebyscore)
 ========================
 
-** timing for 10000 ops
-
   DONE in 0.20sec
+
+Insert 100000 users 
+===================
+
+  DONE in 65.83 sec
+
+    real    1m5.947s
+    user    0m54.538s
+    sys     0m11.640s
+
+__usage__
+
+    used_memory:109758000
+    used_memory_human:104.67M
+
+Insert 80000 users with cluster
+===============================
+
+    real    0m16.611s
+    user    1m22.646s
+    sys     0m13.966s
 

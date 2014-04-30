@@ -1,8 +1,10 @@
 require 'colors'
 
-cuid   = require 'cuid'
-Recore = require 'recore'
-Redism = require 'redism'
+os      = require 'os'
+cluster = require 'cluster'
+cuid    = require 'cuid'
+Recore  = require 'recore'
+Redism  = require 'redism'
 
 random_string = (len) ->
   buf = []
@@ -50,7 +52,7 @@ Recore.configure
   prefix: "test"
 
 
-total   = 10
+total   = 10000
 counter = 0
 
 start = new Date().getTime()
@@ -66,4 +68,14 @@ add_user = ->
       return process.exit 0
     return add_user()
 
-add_user()
+if cluster.isMaster
+  workers = 0
+  for i in os.cpus()
+    cluster.fork()
+    workers += 1
+
+  cluster.on 'exit', (worker, code, signal) ->
+    workers -= 1
+    process.exit 0 if workers is 0
+else
+  add_user()
